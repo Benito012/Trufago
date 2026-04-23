@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order | TRUFAGO</title>
+  <link rel="stylesheet" href="insex.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">TRUFAGO</div>
+    <button class="nav-toggle" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="clothes.html">Clothes</a>
+      <a href="members.html">Members</a>
+      <a href="supporters.html">Supporters</a>
+      <a href="social.html">Social</a>
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a>
+    </div>
+  </nav>
+
+  <main class="order-page">
+    <div class="section-title">
+      <span>Order form</span>
+      <h2>Choose your favourite clothes</h2>
+    </div>
+
+    <div class="split-section">
+      <div class="form-card">
+        <h3>Place your order</h3>
+        <p>Fill in your order details and proceed to payment proof submission.</p>
+
+        <div id="order-message" class="form-message" style="display:none;"></div>
+        <form id="order-form">
+          <div class="form-group">
+            <label for="product">Product</label>
+            <select id="product" name="product" required>
+              <option value="">Select a product</option>
+              <option value="Signature Hoodie">Signature Hoodie - R330</option>
+              <option value="TRUFAGO T-Shirt">TRUFAGO T-Shirt - R180</option>
+              <option value="Street Cap">Street Cap - R140</option>
+              <option value="Slouchy Beanie">Slouchy Beanie - R150</option>
+              <option value="Mafia Tracksuit">Mafia Tracksuit - R760</option>
+              <option value="Cargo Pants">Cargo Pants - R420</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="size">Size</label>
+            <select id="size" name="size" required>
+              <option value="">Choose size</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+27 81 000 0000" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Delivery address</label>
+            <textarea id="address" name="address" placeholder="Street, city, province" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Proceed to payment</button>
+        </form>
+      </div>
+
+      <aside class="payment-summary">
+        <h3>Available clothes</h3>
+        <p>Choose from our fresh street wear selection. After submitting your order, upload proof of payment on the next page.</p>
+        <ul>
+          <li><strong>Signature Hoodie</strong> — Soft fleece, R330</li>
+          <li><strong>TRUFAGO T-Shirt</strong> — Bold logo, R180</li>
+          <li><strong>Street Cap</strong> — Structured fit, R140</li>
+          <li><strong>Slouchy Beanie</strong> — Warm and stylish, R150</li>
+          <li><strong>Mafia Tracksuit</strong> — Set with zip detail, R760</li>
+          <li><strong>Cargo Pants</strong> — Tapered street style, R420</li>
+        </ul>
+        <div id="cart-summary" class="order-summary"></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>Bodibe Shaleng · GPS: -26.0000, 27.0000 · TRUFAGO Street Wear</p>
+    <p><a href="social.html">Social links</a> · <a href="payment.html">Payment</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
