@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Account | TRUFAGO</title>
   <link rel="stylesheet" href="insex.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav>
     <div class="logo">TRUFAGO</div>
-    <button class="nav-toggle" aria-label="Open navigation menu">
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
       <span></span>
       <span></span>
       <span></span>
@@ -21,6 +21,7 @@
       <a href="members.html">Members</a>
       <a href="supporters.html">Supporters</a>
       <a href="social.html">Social</a>
+      <a href="login.html">Login</a>
       <a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a>
     </div>
   </nav>
@@ -29,9 +30,9 @@
     <div class="form-card">
       <span class="eyebrow">Join TRUFAGO</span>
       <h2>Create your account</h2>
-      <p>Register now to order street wear, save your preferences and stay updated.</p>
+      <p>Register to save time at checkout, keep your details ready, and stay connected to new drops.</p>
 
-      <div id="signup-message" class="form-message" style="display:none;"></div>
+      <div id="signup-message" class="form-message"></div>
       <form id="signup-form">
         <div class="form-group">
           <label for="name">Full name</label>
@@ -50,19 +51,20 @@
 
         <div class="form-group">
           <label for="confirmPassword">Confirm password</label>
-          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Create Account</button>
+        <button type="submit" class="btn btn-primary">Create account</button>
       </form>
 
-      <p style="margin-top: 18px; color: var(--muted);">Already registered? <a href="login.html">Login now</a>.</p>
+      <p class="auth-links">Already registered? <a href="login.html">Login here</a>.</p>
     </div>
   </main>
 
   <footer>
-    <p>Bodibe Shaleng · GPS: -26.0000, 27.0000 · TRUFAGO Street Wear</p>
-    <p><a href="social.html">Social links</a> · <a href="payment.html">Payment</a></p>
+    <p class="footer-title">TRUFAGO Street Wear</p>
+    <p>Premium streetwear from Bodibe, South Africa, designed for confidence, culture, and everyday presence.</p>
+    <p><a href="clothes.html">Shop the collection</a> &middot; <a href="login.html">Account access</a> &middot; <a href="social.html">Social links</a></p>
   </footer>
 
   <script src="script.js"></script>

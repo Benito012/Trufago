@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TRUFAGO Street Wear</title>
   <link rel="stylesheet" href="insex.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav>
     <div class="logo">TRUFAGO</div>
-    <button class="nav-toggle" aria-label="Open navigation menu">
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
       <span></span>
       <span></span>
       <span></span>
@@ -21,27 +21,52 @@
       <a href="members.html">Members</a>
       <a href="supporters.html">Supporters</a>
       <a href="social.html">Social</a>
+      <a href="login.html">Login</a>
       <a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a>
     </div>
   </nav>
 
-  <main>
+  <main class="home-page">
+    <section class="promo-strip">
+      <span>New drop live now</span>
+      <span>Fast WhatsApp order support</span>
+      <span>Simple local checkout flow</span>
+    </section>
+
     <section class="hero">
       <div class="hero-copy">
-        <span class="eyebrow">Premium street wear</span>
-        <h1>Wear the culture.</h1>
-        <p>Explore TRUFAGO's latest hoodies, caps, tracksuits and statement essentials.</p>
+        <span class="eyebrow">Premium streetwear from Bodibe</span>
+        <h1>Streetwear presented like a modern retail drop.</h1>
+        <p>TRUFAGO now leans into a cleaner, more fashion-focused shopping experience with sharper product presentation, softer surfaces, and a layout inspired by leading online stores like Bash.</p>
         <div class="hero-actions">
           <a href="clothes.html" class="btn btn-primary">Shop collection</a>
-          <a href="members.html" class="btn btn-secondary">Meet members</a>
+          <a href="product.html?slug=tracksuit" class="btn btn-secondary">View featured look</a>
+        </div>
+        <div class="hero-categories">
+          <a href="product.html?slug=hoodie" class="category-pill">Hoodies</a>
+          <a href="product.html?slug=tshirt" class="category-pill">T-Shirts</a>
+          <a href="product.html?slug=tracksuit" class="category-pill">Tracksuits</a>
+          <a href="product.html?slug=cap" class="category-pill">Headwear</a>
         </div>
       </div>
+
+      <aside class="hero-panel">
+        <span class="hero-tag">Featured look</span>
+        <img src="mafia.jpg" alt="Mafia Tracksuit featured product" class="hero-panel-image">
+        <div class="hero-panel-copy">
+          <p class="hero-panel-label">Current spotlight</p>
+          <h2>Mafia Tracksuit</h2>
+          <p>A cleaner retail-style highlight for one of TRUFAGO's strongest coordinated pieces, built for confident everyday wear.</p>
+          <a href="product.html?slug=tracksuit" class="btn btn-primary">Shop featured look</a>
+        </div>
+      </aside>
     </section>
 
     <section class="products" id="products">
       <div class="section-title">
-        <span>New Drop</span>
-        <h2>Available Clothes</h2>
+        <span>New in TRUFAGO</span>
+        <h2>Shop the collection by standout piece</h2>
+        <p class="section-description">A cleaner product grid makes each item feel more premium, easier to scan, and closer to a professional online storefront.</p>
       </div>
 
       <div class="grid">
@@ -50,7 +75,7 @@
           <div class="card-copy">
             <h3>Signature Hoodie</h3>
             <p class="price">R330</p>
-            <p>Soft cotton fleece with bold minimal branding.</p>
+            <p>Heavyweight comfort with a refined silhouette and minimal statement branding.</p>
           </div>
         </a>
 
@@ -59,7 +84,7 @@
           <div class="card-copy">
             <h3>TRUFAGO T-Shirt</h3>
             <p class="price">R180</p>
-            <p>Lightweight tee in black or white with bold logo print.</p>
+            <p>Clean logo tee with breathable comfort and an easy everyday fit.</p>
           </div>
         </a>
 
@@ -68,7 +93,7 @@
           <div class="card-copy">
             <h3>Street Cap</h3>
             <p class="price">R140</p>
-            <p>Structured fit with premium embroidery and adjustable strap.</p>
+            <p>Structured shape, premium embroidery, and a reliable adjustable fit.</p>
           </div>
         </a>
 
@@ -77,7 +102,7 @@
           <div class="card-copy">
             <h3>Slouchy Beanie</h3>
             <p class="price">R150</p>
-            <p>Warm, relaxed fit beanie perfect for cool city nights.</p>
+            <p>Soft knit warmth with a relaxed profile for cooler street-ready looks.</p>
           </div>
         </a>
 
@@ -86,7 +111,7 @@
           <div class="card-copy">
             <h3>Mafia Tracksuit</h3>
             <p class="price">R760</p>
-            <p>Matching jacket and jogger set with premium zipper details.</p>
+            <p>Premium coordinated styling with strong details and a polished finish.</p>
           </div>
         </a>
 
@@ -95,35 +120,42 @@
           <div class="card-copy">
             <h3>Cargo Pants</h3>
             <p class="price">R420</p>
-            <p>Durable street cargo pants with multiple pockets and tapered fit.</p>
+            <p>Utility-inspired trousers with a tapered shape and everyday durability.</p>
           </div>
         </a>
       </div>
     </section>
 
     <section class="split-section contact-section" id="contact">
-      <div>
-        <span class="eyebrow">Fast service</span>
-        <h2>Place your order today</h2>
-        <p>Choose an item, add it to your cart, then upload proof of payment at checkout.</p>
-        <a href="cart.html" class="btn btn-primary">View Cart</a>
+      <div class="contact-content">
+        <span class="eyebrow">Smoother checkout</span>
+        <h2>Built to feel easier from browse to payment.</h2>
+        <p>Add items to cart, save delivery details, and move into a Stripe or PayFast payment demo through a more structured experience that now feels closer to a modern retail store.</p>
+        <ul class="contact-list">
+          <li>Cleaner product discovery and more readable layouts.</li>
+          <li>Soft motion and hover states that add polish without distraction.</li>
+          <li>Direct WhatsApp help when you need fast assistance.</li>
+        </ul>
+        <a href="cart.html" class="btn btn-primary">View your cart</a>
       </div>
 
       <div class="contact-card">
-        <h3>Need help?</h3>
-        <p>Contact our support team on WhatsApp or follow us on Instagram for updates.</p>
-        <a class="whatsapp" href="https://wa.me/27814759342">Chat on WhatsApp</a>
-        <p class="contact-info">
-          Young Strouss: +27 81 475 9342<br>
-          MajorSteez: +27 71 858 3304
-        </p>
+        <h3>Need support?</h3>
+        <p>Reach the TRUFAGO team directly for order updates, payment guidance, and collection questions.</p>
+        <a class="whatsapp" href="https://wa.me/27814759342" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
+        <ul class="detail-list">
+          <li><strong>Young Strouss:</strong> +27 81 475 9342</li>
+          <li><strong>MajorSteez:</strong> +27 71 858 3304</li>
+          <li><strong>Availability:</strong> Daily support for orders and collection updates</li>
+        </ul>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Bodibe Shaleng · GPS: -26.0000, 27.0000 · TRUFAGO Street Wear</p>
-    <p><a href="social.html">Social links</a> · <a href="payment.html">Payment</a></p>
+    <p class="footer-title">TRUFAGO Street Wear</p>
+    <p>Premium streetwear from Bodibe, South Africa, designed for confidence, culture, and everyday presence.</p>
+    <p><a href="clothes.html">Shop the collection</a> &middot; <a href="social.html">Social links</a> &middot; <a href="login.html">Account access</a></p>
   </footer>
 
   <script src="script.js"></script>

@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Payment | TRUFAGO</title>
   <link rel="stylesheet" href="insex.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav>
     <div class="logo">TRUFAGO</div>
-    <button class="nav-toggle" aria-label="Open navigation menu">
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
       <span></span>
       <span></span>
       <span></span>
@@ -21,49 +21,69 @@
       <a href="members.html">Members</a>
       <a href="supporters.html">Supporters</a>
       <a href="social.html">Social</a>
+      <a href="login.html">Login</a>
       <a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a>
     </div>
   </nav>
 
   <main class="payment-page">
     <div class="section-title">
-      <span>Checkout options</span>
-      <h2>Live and offline payment</h2>
+      <span>Demo checkout</span>
+      <h2>Choose Stripe or PayFast</h2>
+      <p class="section-description">This version uses fully clickable local demo flows so you can test the payment experience now, before adding live merchant keys.</p>
     </div>
 
     <div class="split-section">
       <div class="form-card">
-        <h3>Choose your payment path</h3>
-        <p>Use a secure live payment service or pay offline via bank transfer and upload proof.</p>
+        <span class="eyebrow">Demo providers</span>
+        <h3>Launch a payment demo</h3>
+        <p>Choose the gateway you want to preview. Both options work locally in the browser and simulate a successful hosted payment flow.</p>
 
-        <div id="payment-message" class="form-message" style="display:none;"></div>
-        <form id="payment-form">
-          <div class="form-group">
-            <label for="paymentMethod">Payment method</label>
-            <select id="paymentMethod" name="paymentMethod" required>
-              <option value="">Select payment method</option>
-              <option value="live">Live online payment</option>
-              <option value="bank">Bank transfer (offline)</option>
-              <option value="mobile">Mobile money</option>
-            </select>
-          </div>
+        <div id="payment-message" class="form-message"></div>
+        <div class="payment-option-grid">
+          <article class="provider-card provider-card-stripe">
+            <div class="provider-card-top">
+              <div>
+                <p class="provider-label">Card checkout demo</p>
+                <h4>Stripe Demo</h4>
+              </div>
+              <span class="provider-badge">Demo</span>
+            </div>
+            <p>Simulates a Stripe-style hosted card checkout with a clean payment form and instant confirmation.</p>
+            <ul class="feature-list">
+              <li>Card form demo with customer details.</li>
+              <li>Fast confirmation and local receipt preview.</li>
+              <li>Best for testing your site flow right now.</li>
+            </ul>
+            <button type="button" class="btn btn-primary demo-payment-trigger" data-provider="stripe">Launch Stripe demo</button>
+          </article>
 
-          <div id="payment-instructions" class="form-group payment-instructions">
-            <p>Select a payment method to see instructions and secure live payment options.</p>
-          </div>
+          <article class="provider-card provider-card-payfast">
+            <div class="provider-card-top">
+              <div>
+                <p class="provider-label">South African gateway demo</p>
+                <h4>PayFast Demo</h4>
+              </div>
+              <span class="provider-badge">Demo</span>
+            </div>
+            <p>Simulates a PayFast redirect-style checkout with customer details and a payment method selection.</p>
+            <ul class="feature-list">
+              <li>Designed around a local checkout flow.</li>
+              <li>Includes payment method selection in the demo.</li>
+              <li>Useful for previewing the final user journey.</li>
+            </ul>
+            <button type="button" class="btn btn-secondary demo-payment-trigger" data-provider="payfast">Launch PayFast demo</button>
+          </article>
+        </div>
 
-          <div class="form-group">
-            <label for="proof">Proof of payment</label>
-            <input type="file" id="proof" name="proof" accept="image/*,application/pdf" required>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Submit Payment Proof</button>
-        </form>
+        <div class="payment-inline-note">
+          <strong>Demo only:</strong> no real money is charged in this version.
+        </div>
 
         <div class="privacy-card">
-          <h3>Privacy policy</h3>
-          <p>We keep your payment details private. Files uploaded here are only used to confirm your order and will not be shared with third parties.</p>
-          <p>TRUFAGO uses industry-standard website security and only accepts payments through trusted methods.</p>
+          <h3>Next step later</h3>
+          <p>Once you are ready for live payments, this demo can be replaced with real Stripe and PayFast merchant integrations using your actual account credentials.</p>
+          <p>For now, the goal is to make the payment page feel complete and usable during testing.</p>
         </div>
       </div>
 
@@ -74,9 +94,36 @@
     </div>
   </main>
 
+  <div class="checkout-modal" id="checkout-modal" hidden>
+    <div class="checkout-backdrop" data-close-checkout></div>
+    <div class="checkout-dialog" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button type="button" class="checkout-close" id="checkout-close" aria-label="Close checkout">&times;</button>
+      <div class="checkout-header">
+        <span id="checkout-provider-badge" class="provider-badge">Demo</span>
+        <h3 id="checkout-title">Demo checkout</h3>
+        <p id="checkout-description">Loading demo payment details...</p>
+      </div>
+
+      <div class="checkout-summary-box">
+        <p>Total due</p>
+        <strong id="checkout-amount">R0</strong>
+        <span id="checkout-reference">Preparing reference...</span>
+      </div>
+
+      <div class="checkout-demo-note" id="checkout-demo-note"></div>
+
+      <form id="demo-checkout-form">
+        <div id="checkout-fields"></div>
+        <div id="checkout-form-message" class="form-message"></div>
+        <button type="submit" class="btn btn-primary" id="checkout-submit">Complete demo payment</button>
+      </form>
+    </div>
+  </div>
+
   <footer>
-    <p>Bodibe Shaleng · GPS: -26.0000, 27.0000 · TRUFAGO Street Wear</p>
-    <p><a href="social.html">Social links</a> · <a href="payment.html">Payment</a></p>
+    <p class="footer-title">TRUFAGO Street Wear</p>
+    <p>Premium streetwear from Bodibe, South Africa, designed for confidence, culture, and everyday presence.</p>
+    <p><a href="order.html">Back to checkout details</a> &middot; <a href="cart.html">View cart</a> &middot; <a href="social.html">Social links</a></p>
   </footer>
 
   <script src="script.js"></script>
